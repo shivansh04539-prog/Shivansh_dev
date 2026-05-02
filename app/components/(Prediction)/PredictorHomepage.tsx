@@ -229,9 +229,7 @@ export default function LandingPage() {
                   <span className="arrow inline-block transition-transform duration-200">→</span>
                 </button>
 
-                <button className="inline-flex items-center gap-2 px-7 py-[14px] bg-transparent text-[#f0ece3]/55 font-dm text-[0.93rem] border border-[#f0ece3]/14 rounded-[6px] transition-all duration-200 hover:border-[#f0ece3]/40 hover:text-[#f5f0e8]">
-                  See sample report
-                </button>
+              
               </div>
 
               {/* Feature pills */}
