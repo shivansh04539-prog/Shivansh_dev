@@ -51,7 +51,7 @@ export default function Navbar() {
 
             {/* Special Prediction Button - Desktop */}
             <Link
-              href="/prediction"
+              href="/neet-result-predictor"
               className="relative inline-flex items-center px-5 py-2 text-sm font-bold text-white transition-transform hover:scale-105 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-[0_0_20px_rgba(168,85,247,0.4)]"
             >
               Prediction

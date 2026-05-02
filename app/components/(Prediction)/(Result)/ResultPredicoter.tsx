@@ -9,6 +9,7 @@ import {
   Zap,
   Star
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // ============================================================================
 // --- ALGORITHM MODULE (Keeping your original logic) ---
@@ -123,6 +124,8 @@ export default function ResultPage({ answers, onReset }) {
   if (!answers) return null;
   const result = runPredictionAlgorithm(answers);
 
+  const router = useRouter()
+
   return (
     <div className="min-h-screen bg-[#05040a] text-slate-200 font-sans relative overflow-hidden flex flex-col items-center py-12 px-6">
       
@@ -235,7 +238,7 @@ export default function ResultPage({ answers, onReset }) {
             <RotateCcw className="w-4 h-4" /> Retake
           </button>
           
-          <button className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-medium text-sm flex items-center gap-2 hover:bg-white/10 transition-all">
+          <button onClick={()=> router.push('/')} className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-medium text-sm flex items-center gap-2 hover:bg-white/10 transition-all">
             <Home className="w-4 h-4" /> Home
           </button>
         </div>
