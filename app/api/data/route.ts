@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import Blog from "@/models/Blog";
+import {Blog } from "@/models/Blog";
 import dbConnect from "@/lib/db";
 import data from "../../../contents/data.json";
 
