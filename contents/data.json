@@ -1,0 +1,341 @@
+[
+  {
+    "post": {
+      "metadata": {
+        "title": "Why Saharanpur is the Next Big Real Estate Investment Hotspot",
+        "category": "Real Estate",
+        "date": "2024-03-15",
+        "readTimeMinutes": 7,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2574&auto=format&fit=crop",
+          "altText": "A modern, luxurious two-story white house with a swimming pool at dusk"
+        },
+        "summary": "Learn about the new features and improvements in Next.js 14.",
+        "slug": "why-saharanpur-is-the-next-big-real-estate-investment-hotspot"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "The Foundation of Growth: Infrastructure and Connectivity",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Saharanpur's real estate potential is fundamentally anchored in its strategic location and massive infrastructural upgrades..."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Next.js 15: What’s New and Why Developers Should Care",
+        "category": "Web Development",
+        "date": "2025-02-12",
+        "readTimeMinutes": 6,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+          "altText": "Developer working on a laptop with code on screen"
+        },
+        "summary": "Explore the key improvements in Next.js 15, from enhanced caching to server actions and better performance.",
+        "slug": "nextjs-15-whats-new-and-why-developers-should-care"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Server Actions and Edge Functions",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Next.js 15 introduces native Server Actions, allowing developers to handle backend logic directly in components."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Understanding React Server Components: The Future of React Apps",
+        "category": "Frontend",
+        "date": "2025-01-28",
+        "readTimeMinutes": 8,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61",
+          "altText": "React code on a computer screen"
+        },
+        "summary": "React Server Components are reshaping how data and UI interact in modern web apps.",
+        "slug": "understanding-react-server-components-the-future-of-react-apps"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "What Are Server Components?",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "They let you render UI on the server without shipping unnecessary JavaScript to the client, improving speed and SEO. This paradigm shift has profound implications for performance and user experience."
+            },
+            {
+              "type": "subheading",
+              "text": "Key Benefits"
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "items": [
+                "Zero-Bundle-Size: Server Components don't send JavaScript to the client.",
+                "Direct Data Access: They can directly access databases and APIs on the server.",
+                "Improved Performance: Less JavaScript means faster page loads and interactivity."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Here is an example of what a simple Server Component might look like:"
+            },
+            {
+              "type": "code",
+              "language": "jsx",
+              "code": "import db from './db';\n\nasync function Note({id}) {\n  const note = await db.notes.get(id);\n  return <Showdown content={note.content} />;\n}"
+            },
+            {
+              "type": "quote",
+              "text": "By moving logic to the server, we can build richer experiences without compromising on performance."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Mastering TypeScript in 2025: Best Practices and Patterns",
+        "category": "Programming",
+        "date": "2025-03-01",
+        "readTimeMinutes": 9,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1517433456452-f9633a875f6f",
+          "altText": "TypeScript logo and code editor"
+        },
+        "summary": "From utility types to advanced generics, here’s how to write scalable and maintainable TypeScript code.",
+        "slug": "mastering-typescript-in-2025-best-practices-and-patterns"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Type Inference and Utility Types",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "TypeScript’s inference system reduces redundant typing, making your code cleaner and more predictable."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Building Scalable APIs with NestJS and MongoDB",
+        "category": "Backend",
+        "date": "2025-02-20",
+        "readTimeMinutes": 7,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1605902711622-cfb43c44367d",
+          "altText": "Backend API architecture diagram"
+        },
+        "summary": "A step-by-step guide to building and structuring robust backend APIs using NestJS and MongoDB.",
+        "slug": "building-scalable-apis-with-nestjs-and-mongodb"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Modular Architecture and Dependency Injection",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "NestJS’s modular design helps organize complex backends into scalable, reusable modules."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "AI Coding Assistants: How GitHub Copilot and ChatGPT Are Changing Development",
+        "category": "Artificial Intelligence",
+        "date": "2025-03-05",
+        "readTimeMinutes": 6,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1661956602148-0e3f7e6e6aa4",
+          "altText": "AI assistant suggesting code"
+        },
+        "summary": "Explore how AI tools are transforming the way developers code, debug, and collaborate.",
+        "slug": "ai-coding-assistants-how-github-copilot-and-chatgpt-are-changing-development"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "AI Pair Programming in Action",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "With Copilot and ChatGPT, developers can now auto-complete complex functions, generate tests, and refactor code in seconds."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "From Monolith to Microservices: A Modern Migration Guide",
+        "category": "Software Architecture",
+        "date": "2025-02-10",
+        "readTimeMinutes": 10,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1581091870622-7c8a1a6c7c53",
+          "altText": "Microservices architecture diagram"
+        },
+        "summary": "Learn how to break down a large monolithic app into manageable microservices without losing stability.",
+        "slug": "from-monolith-to-microservices-a-modern-migration-guide"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "The Benefits of Microservices",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Microservices allow independent deployment, scalability, and faster development cycles across teams."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Top 10 VS Code Extensions Every Developer Should Use",
+        "category": "Productivity",
+        "date": "2025-01-15",
+        "readTimeMinutes": 5,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+          "altText": "VS Code editor open with colorful code"
+        },
+        "summary": "Boost your productivity with these essential VS Code extensions for developers in 2025.",
+        "slug": "top-10-vs-code-extensions-every-developer-should-use"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Essential Extensions for Speed and Clean Code",
+          "content": [
+            {
+              "type": "list",
+              "items": [
+                "Prettier – for consistent code formatting",
+                "ESLint – for catching errors early",
+                "GitLens – visualize Git history",
+                "CodeSnap – create beautiful code screenshots"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Exploring Edge Computing: Bringing Cloud Power Closer to You",
+        "category": "Cloud Computing",
+        "date": "2025-03-22",
+        "readTimeMinutes": 8,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1605810230434-763b36f3c1d1",
+          "altText": "Edge servers and cloud data concept"
+        },
+        "summary": "Understand how edge computing reduces latency and enhances the performance of real-time applications.",
+        "slug": "exploring-edge-computing-bringing-cloud-power-closer-to-you"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Edge vs Cloud: Key Differences",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "While cloud servers process data centrally, edge computing handles it locally — closer to the source, improving speed and privacy."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "The Rise of Bun: Is It Really Faster Than Node.js?",
+        "category": "JavaScript",
+        "date": "2025-02-25",
+        "readTimeMinutes": 7,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+          "altText": "JavaScript runtime terminal output"
+        },
+        "summary": "Bun claims to be the fastest JavaScript runtime — here’s how it stacks up against Node.js and Deno.",
+        "slug": "the-rise-of-bun-is-it-really-faster-than-nodejs"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Speed and Performance Benchmarks",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Bun’s native Zig-based runtime compiles and executes JS faster than Node.js, especially in API-heavy workloads."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "post": {
+      "metadata": {
+        "title": "Why Learning Rust Can Make You a Better Programmer",
+        "category": "Programming Languages",
+        "date": "2025-01-30",
+        "readTimeMinutes": 9,
+        "featuredImage": {
+          "url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+          "altText": "Rust programming language logo with laptop"
+        },
+        "summary": "Rust offers safety, speed, and reliability — all crucial traits for modern developers.",
+        "slug": "why-learning-rust-can-make-you-a-better-programmer"
+      },
+      "body": [
+        {
+          "type": "section",
+          "heading": "Ownership and Memory Safety",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Rust’s ownership system eliminates entire classes of memory bugs without needing a garbage collector."
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
