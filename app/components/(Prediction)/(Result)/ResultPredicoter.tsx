@@ -206,7 +206,7 @@ export default function ResultPage({ answers, onReset }) {
           <div className="relative shrink-0">
             <div className="absolute inset-0 bg-orange-500 blur-2xl opacity-20 rounded-full animate-pulse" />
             <img 
-              src="Budh.jpg" 
+              src="/Budh.jpg" 
               alt="Divine" 
               className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-orange-500/40"
             />
