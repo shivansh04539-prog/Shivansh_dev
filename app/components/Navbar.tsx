@@ -126,7 +126,7 @@ export default function Navbar() {
                   className="px-2 pb-2"
                 >
                   <Link
-                    href="/prediction"
+                    href="/neet-result-predictor"
                     className="relative flex justify-center items-center py-3 px-4 rounded-lg text-white font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/30"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
