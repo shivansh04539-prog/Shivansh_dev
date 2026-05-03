@@ -46,4 +46,17 @@ export const quizData: QuizQuestion[] = [
       { label: "STORM", icon: "cloud-lightning" },
     ],
   },
+  {
+  id: "q5",
+  title: "At what time do you usually study best?",
+  subtitle: "Different energies peak at different times of the day.",
+  type: "single-choice",
+  options: [
+    "Early Morning",
+    "Morning",
+    "Afternoon",
+    "Evening",
+    "Late Night"
+  ],
+},
 ];

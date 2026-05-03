@@ -47,7 +47,7 @@ const SellingPage = () => {
         </p>
       </div>
 
-      <header className="max-w-5xl mx-auto pt-16 px-6 text-center relative">
+      <header   id="buy-paper" className="max-w-5xl mx-auto pt-16 px-6 text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
         <div className="inline-flex items-center gap-2 bg-white text-indigo-700 px-5 py-2 rounded-full text-sm font-bold mb-8 border border-indigo-100 shadow-sm transition hover:shadow-md">

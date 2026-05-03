@@ -25,6 +25,8 @@ export default function QuizBoard() {
       month: answers["q2"],
       syllabus: answers["q3"],
       mind: answers["q4"],
+       studyTime: answers["q5"],
+      
     };
     const handleReset = () => {
       setCompleted(false);

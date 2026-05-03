@@ -229,6 +229,7 @@ export default function ResultPage({ answers, onReset }) {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <motion.button 
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+            onClick={()=> router.push('/neet-result-predictor#buy-paper')}
             className="px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-cyan-500/20"
           >
             Buy Question Paper <Zap className="w-4 h-4 fill-white" />
