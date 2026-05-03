@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Page = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center  text-white px-6">
+    <div className="min-h-screen text-black flex items-center justify-center  text-white px-6">
       <div className="max-w-3xl text-center">
         <h1 className="text-4xl font-bold mb-6">
           Get Instant Paper Leak 

@@ -47,7 +47,7 @@ export default function LandingPage() {
       dots.forEach((d) => {
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(251,191,36,${d.opacity})`;
+        ctx.fillStyle = `rgba(245,158,11,${d.opacity})`; // Slightly darker amber for light theme visibility
         ctx.fill();
         d.y -= d.speed;
         if (d.y < -5) d.y = canvas.height + 5;
@@ -75,14 +75,6 @@ export default function LandingPage() {
 
   return (
     <>
-      {/*
-        Minimal style block — only for things Tailwind cannot express:
-        • Google Fonts import
-        • gradient text (-webkit-background-clip + -webkit-text-fill-color)
-        • custom keyframes (fadeUp, pulseRing, shimmer, imgFloat)
-        • ::after pseudo-elements (pulse dot ring, CTA shimmer)
-        • clamp() font sizes are applied via inline style props below
-      */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -105,7 +97,7 @@ export default function LandingPage() {
 
         .gradient-text {
           font-style: italic;
-          background: linear-gradient(95deg, #fbbf24 0%, #f97316 55%, #ef4444 100%);
+          background: linear-gradient(95deg, #f59e0b 0%, #ea580c 55%, #ef4444 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -125,7 +117,7 @@ export default function LandingPage() {
           position: absolute;
           inset: -4px;
           border-radius: 50%;
-          background: rgba(251,191,36,0.4);
+          background: rgba(245,158,11,0.4);
           animation: pulseRing 1.8s ease-out infinite;
         }
 
@@ -134,7 +126,7 @@ export default function LandingPage() {
           content: '';
           position: absolute;
           inset: 0;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
           transform: translateX(-100%);
           transition: transform 0.5s ease;
         }
@@ -146,40 +138,41 @@ export default function LandingPage() {
       `}</style>
 
       {/* ── Root ── */}
-      <div className="font-dm relative min-h-screen  text-[#f0ece3] overflow-x-hidden">
+      {/* Changed text colors to slate-900 for light theme visibility */}
+      <div className="font-dm relative min-h-screen text-slate-900 overflow-x-hidden">
 
         {/* Particle canvas — fixed, behind everything */}
         <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />
 
-        {/* Fine grid overlay */}
+        {/* Fine grid overlay - darkened for light background */}
         <div
           className="absolute inset-0 pointer-events-none z-0"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),' +
-              'linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px)',
+              'linear-gradient(rgba(0,0,0,0.04) 1px,transparent 1px),' +
+              'linear-gradient(90deg,rgba(0,0,0,0.04) 1px,transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
 
-        {/* Ambient amber glow (left side, behind headline) */}
+        {/* Ambient amber glow */}
         <div
           className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full pointer-events-none z-0"
           style={{
             background:
-              'radial-gradient(circle, rgba(251,191,36,0.07) 0%, rgba(234,88,12,0.04) 40%, transparent 70%)',
+              'radial-gradient(circle, rgba(245,158,11,0.08) 0%, rgba(234,88,12,0.04) 40%, transparent 70%)',
           }}
         />
 
         {/* ── Nav ── */}
         <nav className="relative z-10 max-w-[1200px] mx-auto px-8 py-5 flex items-center justify-between">
-          <span className="font-space text-[13px] tracking-[0.12em] uppercase text-[#f0ece3]/30">
-            NEET&nbsp;<span className="text-amber-400">·</span>&nbsp;2026
+          <span className="font-space text-[13px] tracking-[0.12em] uppercase text-slate-500">
+            NEET&nbsp;<span className="text-amber-500">·</span>&nbsp;2026
           </span>
 
           {/* Live badge */}
-          <div className="font-space inline-flex items-center gap-2 px-4 py-[6px] rounded-full border border-amber-400/25 bg-amber-400/[0.06] text-[11px] tracking-[0.1em] uppercase text-amber-400">
-            <span className="pulse-dot relative w-[7px] h-[7px] rounded-full bg-amber-400 flex-shrink-0" />
+          <div className="font-space inline-flex items-center gap-2 px-4 py-[6px] rounded-full border border-amber-200 bg-amber-50 text-[11px] tracking-[0.1em] uppercase text-amber-600">
+            <span className="pulse-dot relative w-[7px] h-[7px] rounded-full bg-amber-500 flex-shrink-0" />
             Live Results Tonight
           </div>
         </nav>
@@ -193,15 +186,15 @@ export default function LandingPage() {
 
               {/* Eyebrow */}
               <div className="reveal d1 flex items-center gap-3 mb-7">
-                <span className="inline-block w-9 h-[2px] bg-amber-400/70 flex-shrink-0" />
-                <span className="font-space text-[11px] tracking-[0.18em] uppercase text-amber-400/65">
+                <span className="inline-block w-9 h-[2px] bg-amber-500/70 flex-shrink-0" />
+                <span className="font-space text-[11px] tracking-[0.18em] uppercase text-amber-600">
                   Final Readiness Check
                 </span>
               </div>
 
               {/* Headline */}
               <h1
-                className="font-playfair font-black text-[#f5f0e8] leading-[1.05] tracking-tight reveal d2"
+                className="font-playfair font-black text-slate-900 leading-[1.05] tracking-tight reveal d2"
                 style={{ fontSize: 'clamp(2.6rem, 5vw, 5.4rem)' }}
               >
                 Are you ready<br />
@@ -212,7 +205,7 @@ export default function LandingPage() {
 
               {/* Sub-heading */}
               <p
-                className="font-dm font-light text-[#f0ece3]/50 leading-relaxed mt-6 reveal d3"
+                className="font-dm font-light text-slate-600 leading-relaxed mt-6 reveal d3"
                 style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.12rem)', maxWidth: '460px' }}
               >
                 Take a 2-minute predictor test built around this year's NEET pattern.
@@ -222,14 +215,12 @@ export default function LandingPage() {
               {/* CTA row */}
               <div className="flex flex-wrap items-center gap-4 mt-11 reveal d4">
                 <button
-                  className="cta-primary relative overflow-hidden inline-flex items-center gap-3 px-9 py-4 bg-amber-400 text-[#07070e] font-dm font-medium text-base rounded-[6px] transition-all duration-200 hover:bg-amber-300 hover:-translate-y-0.5 active:scale-[0.98]"
+                  className="cta-primary relative overflow-hidden inline-flex items-center gap-3 px-9 py-4 bg-amber-400 text-slate-900 font-dm font-medium text-base rounded-[6px] transition-all duration-200 hover:bg-amber-300 hover:-translate-y-0.5 active:scale-[0.98]"
                   onClick={() => router.push('/neet-result-predictor')}
                 >
                   Start Prediction
                   <span className="arrow inline-block transition-transform duration-200">→</span>
                 </button>
-
-              
               </div>
 
               {/* Feature pills */}
@@ -237,23 +228,23 @@ export default function LandingPage() {
                 {pills.map((t) => (
                   <span
                     key={t}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-[7px] rounded-full border border-white/[0.07] bg-white/[0.02] text-[0.77rem] text-[#f0ece3]/45 font-dm"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-[7px] rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-[0.77rem] font-bold"
                   >
-                    <span className="w-[5px] h-[5px] rounded-full bg-amber-400 opacity-70 flex-shrink-0" />
+                    <span className="w-[5px] h-[5px] rounded-full bg-amber-500 opacity-80 flex-shrink-0" />
                     {t}
                   </span>
                 ))}
               </div>
 
               {/* Thin divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent my-12 reveal d5" />
+              <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-12 reveal d5" />
 
               {/* Countdown + Stats row */}
               <div className="flex flex-wrap items-start gap-12 reveal d6">
 
                 {/* Timer */}
                 <div>
-                  <p className="font-space text-[10px] tracking-[0.2em] uppercase text-amber-400/40 mb-4">
+                  <p className="font-space text-[10px] tracking-[0.2em] uppercase text-amber-600/60 mb-4">
                     Time until exam
                   </p>
                   <div className="flex items-start gap-0.5">
@@ -265,18 +256,18 @@ export default function LandingPage() {
                       <React.Fragment key={item.unit}>
                         <div className="text-center">
                           <div
-                            className="font-space font-bold text-amber-400 leading-none"
+                            className="font-space font-bold text-amber-500 leading-none"
                             style={{ fontSize: 'clamp(2.2rem, 4vw, 3.8rem)' }}
                           >
                             {item.val}
                           </div>
-                          <div className="font-space text-[10px] tracking-[0.15em] uppercase text-amber-400/40 mt-1">
+                          <div className="font-space text-[10px] tracking-[0.15em] uppercase text-amber-600/60 mt-1">
                             {item.unit}
                           </div>
                         </div>
                         {i < 2 && (
                           <span
-                            className="font-space text-amber-400/25 leading-none self-start mt-1 px-0.5"
+                            className="font-space text-amber-500/40 leading-none self-start mt-1 px-0.5"
                             style={{ fontSize: 'clamp(1.6rem, 3vw, 2.8rem)' }}
                           >
                             :
@@ -288,16 +279,16 @@ export default function LandingPage() {
                 </div>
 
                 {/* Stats — separated by a left border */}
-                <div className="flex gap-10 flex-wrap border-l border-white/[0.07] pl-12">
+                <div className="flex gap-10 flex-wrap border-l border-slate-200 pl-12">
                   {stats.map(({ num, label }) => (
                     <div key={label}>
                       <div
-                        className="font-space font-bold text-amber-400 leading-none"
+                        className="font-space font-bold text-amber-500 leading-none"
                         style={{ fontSize: '1.5rem' }}
                       >
                         {num}
                       </div>
-                      <div className="text-[0.75rem] text-[#f0ece3]/38 mt-1 tracking-wide font-dm">{label}</div>
+                      <div className="text-[0.75rem] text-slate-500 mt-1 tracking-wide font-dm">{label}</div>
                     </div>
                   ))}
                 </div>
@@ -313,20 +304,20 @@ export default function LandingPage() {
                   className="absolute inset-0 rounded-2xl pointer-events-none"
                   style={{
                     background:
-                      'radial-gradient(ellipse at center, rgba(251,191,36,0.1) 0%, transparent 68%)',
+                      'radial-gradient(ellipse at center, rgba(245,158,11,0.15) 0%, transparent 68%)',
                     transform: 'scale(1.15)',
                   }}
                 />
 
                 {/* Corner accent lines */}
-                <div className="absolute -top-3 -left-3 w-10 h-10 border-t-2 border-l-2 border-amber-400/40 rounded-tl-md pointer-events-none z-20" />
-                <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b-2 border-r-2 border-amber-400/40 rounded-br-md pointer-events-none z-20" />
+                <div className="absolute -top-3 -left-3 w-10 h-10 border-t-2 border-l-2 border-amber-300 rounded-tl-md pointer-events-none z-20" />
+                <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b-2 border-r-2 border-amber-300 rounded-br-md pointer-events-none z-20" />
 
                 {/* Image card */}
-                <div className="img-float relative rounded-2xl overflow-hidden border border-white/[0.08]">
+                <div className="img-float relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-200/50">
 
-                  {/* Dark gradient over image for legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07070e]/75 via-[#07070e]/10 to-[#07070e]/25 z-10 rounded-2xl pointer-events-none" />
+                  {/* Dark gradient over image for legibility is kept slightly dark to allow image to pop, but overlays are lightened below */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/5 to-transparent z-10 rounded-2xl pointer-events-none" />
 
                   <img
                     src="https://plus.unsplash.com/premium_photo-1678693021253-25ab291d1da8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -339,29 +330,29 @@ export default function LandingPage() {
                   <div className="absolute bottom-5 left-5 right-5 z-20 flex items-end justify-between gap-3">
 
                     {/* Live count card */}
-                    <div className="bg-[#07070e]/80 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3">
+                    <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
                       <span
-                        className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"
-                        style={{ boxShadow: '0 0 8px rgba(74,222,128,0.7)' }}
+                        className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"
+                        style={{ boxShadow: '0 0 8px rgba(34,197,94,0.7)' }}
                       />
                       <div>
-                        <div className="font-space text-[10px] text-[#f0ece3]/40 tracking-wider uppercase">Live now</div>
-                        <div className="font-dm font-medium text-[#f5f0e8] text-sm mt-0.5">1,240 students testing</div>
+                        <div className="font-space text-[10px] text-slate-500 tracking-wider uppercase">Live now</div>
+                        <div className="font-dm font-medium text-slate-800 text-sm mt-0.5">1,240 students testing</div>
                       </div>
                     </div>
 
                     {/* Accuracy badge */}
-                    <div className="bg-amber-400/[0.1] backdrop-blur-md border border-amber-400/25 rounded-xl px-4 py-3 text-center flex-shrink-0">
-                      <div className="font-space font-bold text-amber-400 text-xl leading-none">94%</div>
-                      <div className="font-space text-[10px] text-amber-400/50 uppercase tracking-wider mt-1">accuracy</div>
+                    <div className="bg-amber-50/90 backdrop-blur-md border border-amber-200 rounded-xl px-4 py-3 text-center flex-shrink-0 shadow-sm">
+                      <div className="font-space font-bold text-amber-600 text-xl leading-none">94%</div>
+                      <div className="font-space text-[10px] text-amber-600/70 uppercase tracking-wider mt-1">accuracy</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating badge top-right */}
-                <div className="absolute -top-4 -right-4 z-20 flex items-center gap-2 bg-[#07070e] border border-amber-400/30 rounded-full px-4 py-2">
-                  <span className="text-amber-400 text-sm">★</span>
-                  <span className="font-dm text-[0.78rem] text-[#f0ece3]/70">NEET 2026</span>
+                <div className="absolute -top-4 -right-4 z-20 flex items-center gap-2 bg-white border border-amber-200 shadow-md rounded-full px-4 py-2">
+                  <span className="text-amber-500 text-sm">★</span>
+                  <span className="font-dm text-[0.78rem] text-slate-700 font-medium">NEET 2026</span>
                 </div>
               </div>
             </div>
@@ -370,12 +361,12 @@ export default function LandingPage() {
         </main>
 
         {/* Footer */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <footer className="relative z-10 max-w-[1200px] mx-auto px-8 py-5 flex items-center justify-between flex-wrap gap-3">
-          <span className="font-space text-[10px] text-[#f0ece3]/[0.18] tracking-[0.1em]">
+          <span className="font-space text-[10px] text-slate-400 tracking-[0.1em]">
             NEET UG 2025 · PREDICTOR ENGINE V3.1
           </span>
-          <span className="font-space text-[10px] text-[#f0ece3]/[0.18] tracking-[0.1em]">
+          <span className="font-space text-[10px] text-slate-400 tracking-[0.1em]">
             Results are indicative, not official
           </span>
         </footer>
