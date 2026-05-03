@@ -12,7 +12,7 @@ export const metadata = {
     "Explore web development tutorials, Next.js tips, SEO strategies, and real-world coding insights by Shivansh Singh. Learn modern development and build better websites.",
 };
 
-export const revalidate = 3600;
+// export const revalidate = 3600;
 
 export default async function BlogPage() {
   const blogs = await Blog.list();
