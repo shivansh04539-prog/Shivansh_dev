@@ -139,7 +139,7 @@ export default function PredictorSection() {
             icon={Brain}
             buttonText="Check Scientific Prediction"
             variant="purple"
-            onClick={() => handleStart("/Neet-Paper")}
+            onClick={() => handleStart("/neet-paper")}
             imagePath="/NeetLeaked.png"
           />
 
