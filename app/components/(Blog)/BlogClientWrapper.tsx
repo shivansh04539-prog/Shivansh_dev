@@ -31,7 +31,7 @@ const formatText = (text: string) => {
           href={linkUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 font-semibold transition-colors"
+          className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 underline underline-offset-4 font-semibold transition-colors"
         >
           {linkText}
         </a>
@@ -45,7 +45,7 @@ const formatText = (text: string) => {
         {boldParts.map((subPart, j) => {
           if (subPart.startsWith("**") && subPart.endsWith("**")) {
             return (
-              <strong key={j} className="text-cyan-400 font-bold">
+              <strong key={j} className="text-cyan-700 dark:text-cyan-400 font-bold">
                 {subPart.slice(2, -2)}
               </strong>
             );
@@ -111,7 +111,7 @@ export default function BlogClientWrapper({
       return (
         <Tag
           key={index}
-          className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mt-8 mb-4"
+          className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 mt-8 mb-4"
         >
           {formatText(block.content || block.text)}
         </Tag>
@@ -120,35 +120,35 @@ export default function BlogClientWrapper({
 
     if (block.type === "paragraph") {
       return (
-        <p key={index} className="text-lg text-gray-300 leading-relaxed mb-4">
+        <p key={index} className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
           {formatText(block.content || block.text)}
         </p>
       );
     }
 
-    if(block.type == "pdf"){
-     return (
-    <div key={index} className="my-6">
-      <a
-        href={block.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition"
-      >
-        {block.title}
-      </a>
-    </div>
-  );
+    if (block.type === "pdf") {
+      return (
+        <div key={index} className="my-6">
+          <a
+            href={block.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-cyan-600 text-white dark:bg-cyan-500 dark:text-black font-bold rounded-lg hover:bg-cyan-700 dark:hover:bg-cyan-400 transition shadow-md"
+          >
+            {block.title}
+          </a>
+        </div>
+      );
     }
 
     if (block.type === "list") {
       return (
         <ul
           key={index}
-          className="list-disc list-inside space-y-3 pl-4 bg-gray-900/40 p-6 rounded-xl border border-gray-800 mb-6"
+          className="list-disc list-inside space-y-3 pl-4 bg-gray-50 dark:bg-gray-900/40 p-6 rounded-xl border border-gray-200 dark:border-gray-800 mb-6"
         >
           {block.items.map((item: string, i: number) => (
-            <li key={i} className="text-gray-300 leading-relaxed">
+            <li key={i} className="text-gray-700 dark:text-gray-300 leading-relaxed">
               {formatText(item)}
             </li>
           ))}
@@ -178,7 +178,7 @@ export default function BlogClientWrapper({
       imageUrl.startsWith("."));
 
   return (
-    <main className="min-h-screen  text-white pt-24 pb-16">
+    <main className="min-h-screen bg-white dark:bg-[#030712] text-gray-900 dark:text-white pt-24 pb-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           initial="hidden"
@@ -188,19 +188,19 @@ export default function BlogClientWrapper({
         >
           <motion.p
             variants={fadeUp}
-            className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-400 px-4 py-1 rounded-full text-sm font-medium shadow-md backdrop-blur"
+            className="bg-cyan-100 text-cyan-800 dark:bg-gradient-to-r dark:from-cyan-500/20 dark:to-purple-500/20 dark:text-cyan-400 px-4 py-1 rounded-full text-sm font-medium shadow-sm dark:shadow-md backdrop-blur border border-cyan-200 dark:border-none"
           >
             {metadata.category}
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
-            className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mt-2 max-w-4xl leading-tight"
+            className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 dark:from-cyan-400 dark:via-purple-400 dark:to-pink-400 mt-2 max-w-4xl leading-tight"
           >
             {metadata.title}
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-gray-400 mt-2 text-sm">
+          <motion.p variants={fadeUp} className="text-gray-500 dark:text-gray-400 mt-2 text-sm font-medium">
             {metadata.publishDate} &bull; {metadata.readTimeMinutes} min read
           </motion.p>
 
@@ -209,7 +209,7 @@ export default function BlogClientWrapper({
             className="w-full max-w-5xl my-10 md:my-12"
           >
             {isValidUrl ? (
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl">
                 <Image
                   src={imageUrl}
                   alt={metadata.featuredImage.altText || metadata.title}
@@ -219,8 +219,8 @@ export default function BlogClientWrapper({
                 />
               </div>
             ) : (
-              <div className="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center border border-gray-700">
-                <p className="text-gray-500">No Image Available</p>
+              <div className="w-full h-64 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center border border-gray-200 dark:border-gray-700">
+                <p className="text-gray-400 dark:text-gray-500 font-medium">No Image Available</p>
               </div>
             )}
           </motion.div>
@@ -238,7 +238,7 @@ export default function BlogClientWrapper({
                 return (
                   <div key={index} className="mb-8">
                     {block.heading && (
-                      <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mt-8 mb-4">
+                      <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 mt-8 mb-4">
                         {block.heading}
                       </h2>
                     )}
@@ -261,8 +261,9 @@ export default function BlogClientWrapper({
             className="w-full lg:w-1/3"
           >
             <div className="sticky top-24 space-y-8">
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-[#111827] to-[#0d1321] border border-gray-800 shadow-xl backdrop-blur-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">
+              {/* SHARE CARD */}
+              <div className="p-6 rounded-2xl bg-white dark:bg-gradient-to-br dark:from-[#111827] dark:to-[#0d1321] border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-xl dark:backdrop-blur-lg">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   Share this article
                 </h3>
                 <div className="flex gap-4">
@@ -272,7 +273,7 @@ export default function BlogClientWrapper({
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-[#1877F2]/20 text-[#1877F2] hover:bg-[#1877F2]/40 transition"
+                    className="p-3 rounded-full bg-[#1877F2]/10 dark:bg-[#1877F2]/20 text-[#1877F2] hover:bg-[#1877F2]/20 dark:hover:bg-[#1877F2]/40 transition"
                   >
                     <FaFacebookF size={20} />
                   </a>
@@ -282,7 +283,7 @@ export default function BlogClientWrapper({
                     )}&text=${encodeURIComponent(metadata.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-[#1DA1F2]/20 text-[#1DA1F2] hover:bg-[#1DA1F2]/40 transition"
+                    className="p-3 rounded-full bg-[#1DA1F2]/10 dark:bg-[#1DA1F2]/20 text-[#1DA1F2] hover:bg-[#1DA1F2]/20 dark:hover:bg-[#1DA1F2]/40 transition"
                   >
                     <FaTwitter size={20} />
                   </a>
@@ -290,23 +291,24 @@ export default function BlogClientWrapper({
                     onClick={() => {
                       if (currentUrl) navigator.clipboard.writeText(currentUrl);
                     }}
-                    className="p-3 rounded-full bg-gray-700/50 text-gray-300 hover:bg-gray-600 transition"
+                    className="p-3 rounded-full bg-gray-100 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition"
                   >
                     <FaLink size={20} />
                   </button>
                 </div>
               </div>
 
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-900/20 to-purple-900/20 border border-cyan-500/30 shadow-xl">
-                <h3 className="text-xl font-bold text-white mb-2">
+              {/* WEBSITE PROMO CARD */}
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-purple-50 dark:from-cyan-900/20 dark:to-purple-900/20 border border-cyan-200 dark:border-cyan-500/30 shadow-lg dark:shadow-xl">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   Website
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">
-               Want to build a new website with awesome features, a powerful backend, and SEO-friendly design.
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                  Want to build a new website with awesome features, a powerful backend, and SEO-friendly design.
                 </p>
                 <a
                   href="/"
-                  className="block w-full text-center py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold transition"
+                  className="block w-full text-center py-3 rounded-lg bg-cyan-600 dark:bg-cyan-500 hover:bg-cyan-700 dark:hover:bg-cyan-400 text-white dark:text-black font-bold transition shadow-md"
                 >
                   Check Prices Now
                 </a>
