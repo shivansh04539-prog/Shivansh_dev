@@ -14,7 +14,7 @@ import LandingPage from "./components/(Prediction)/PredictorHomepage";
 export default function Home() {
   return (
     <>
-    <LandingPage />
+    {/* <LandingPage /> */}
       <Hero />
       <ImpactMetrics />
       <Projects />
