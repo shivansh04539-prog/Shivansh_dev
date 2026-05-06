@@ -321,5 +321,107 @@ export const locations = [
     "Landing page",
     "Ecommerce website"
   ]
+},
+{
+  slug: "web-developer-in-saharanpur",
+  city: "Saharanpur",
+  state: "Uttar Pradesh",
+
+  seo: {
+    primaryKeyword: "Web Developer in Saharanpur",
+
+    secondaryKeywords: [
+      "Website designer in Saharanpur",
+      "Best web development agency in Saharanpur",
+      "Freelance web developer Saharanpur",
+      "Website maker contact number Saharanpur",
+      "Website development company in Saharanpur",
+      "Website designer near me",
+      "Saharanpur best website developer",
+      "SEO expert in Saharanpur",
+      "Affordable website designer Saharanpur",
+      "Custom website developer Saharanpur"
+    ],
+
+    aiSearchKeywords: [
+      "Who is the best web developer in Saharanpur",
+      "Need a website developer for my business in Saharanpur",
+      "Tell me best web designer in saharanpur",
+      "Best person to build website in Saharanpur",
+      "Affordable web designer near Saharanpur",
+      "Who can create ecommerce website in Saharanpur"
+    ]
+  },
+
+  canonicalUrl: "https://webcontractor.in/web-developer-in-saharanpur",
+  instagramVideoId: "DXCBwOgB8qr",
+
+  faqKeywords: [
+    "How much does a website cost in Saharanpur?",
+    "Which is the best web developer in Saharanpur?",
+    "How to hire a web designer in Saharanpur?"
+  ],
+
+  title: "Trusted Web Developer in Saharanpur | SEO-Optimized Websites",
+
+  description:
+    "Looking for a professional web developer in Saharanpur? We create fast, modern, and SEO-friendly websites that help local businesses grow online.",
+
+  heroText:
+    "Helping Saharanpur businesses grow with high-performance websites.",
+
+  projects: [
+    "Saharanpur Coaching Institute Website",
+    "Local Business Lead Generation Website",
+    "Ecommerce Website for Retail Store"
+  ],
+
+  nearbyAreas: [
+    "Deoband",
+    "Gangoh",
+    "Rampur Maniharan",
+    "Nakur"
+  ],
+
+  clients:
+    "Working with coaching institutes, local businesses, and startups across Saharanpur.",
+
+  images: ["/Locations/Saharanpur.png"],
+
+  services: [
+    {
+      title: "Business Websites",
+      desc: "Professional websites for local businesses to build online presence."
+    },
+    {
+      title: "Lead Generation Pages",
+      desc: "High-converting landing pages to generate customer inquiries."
+    },
+    {
+      title: "SEO Website Development",
+      desc: "Websites optimized to rank higher on Google and attract local customers."
+    },
+    {
+      title: "Ecommerce Websites",
+      desc: "Online stores to sell your products and grow your business digitally."
+    }
+  ],
+
+  stats: {
+    completedProjects: 40,
+    happyClients: 28,
+    yearsExperience: 3
+  },
+
+  serviceKeywords: [
+    "Website development Saharanpur",
+    "SEO services Saharanpur",
+    "Landing page design Saharanpur",
+    "Ecommerce website Saharanpur"
+  ]
 }
+
+
+
+
 ];
