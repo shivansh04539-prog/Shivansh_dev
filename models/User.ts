@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-  phone: { type: String, required: true, unique: true },
+  phone: { type: String, unique: true },
   email: { type: String, required: true },
   state: { type: String },     // Optional initially
   district: { type: String },  // Optional initially

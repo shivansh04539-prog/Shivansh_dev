@@ -301,7 +301,7 @@ export default function BlogClientWrapper({
               {/* WEBSITE PROMO CARD */}
               <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-purple-50 dark:from-cyan-900/20 dark:to-purple-900/20 border border-cyan-200 dark:border-cyan-500/30 shadow-lg dark:shadow-xl">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  Website
+                  Website Developer
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                   Want to build a new website with awesome features, a powerful backend, and SEO-friendly design.
