@@ -140,24 +140,35 @@ const SingleBlogPage = async ({ params }) => {
   };
 
   // --- 2. Improved FAQ Schema Logic ---
-  const faqBlock = body.find(block => block.type === "list" && block.items);
+ const faqBlock = body.find(block => block.type === "list" && block.items);
   const faqItems = faqBlock ? faqBlock.items : [];
 
   const faqJsonLd = faqItems.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqItems.map(item => {
-      // Split by "** " and "?** " to handle your Markdown formatting
-      const parts = item.split("?** "); 
-      const question = parts[0].replace(/\*\*/g, "").trim();
-      const answer = parts[1]?.trim() || "";
+      // 1. Remove Markdown bold stars
+      const cleanItem = item.replace(/\*\*/g, "");
+      
+      // 2. Split by the question mark
+      const parts = cleanItem.split("?");
+      
+      // 3. Extract Question (everything before the first ?)
+      const question = parts[0].trim();
+      
+      // 4. Extract Answer (everything after the first ?), 
+      // or use the whole item if no ? is found as a fallback
+      const answer = parts.slice(1).join("?").trim() || item;
 
       return {
         "@type": "Question",
         "name": question + "?",
-        "acceptedAnswer": { "@type": "Answer", "text": answer }
+        "acceptedAnswer": { 
+          "@type": "Answer", 
+          "text": answer 
+        }
       };
-    })
+    }).filter(q => q.name.length > 5 && q.acceptedAnswer.text.length > 0) // Extra safety
   } : null;
 
   // --- 3. Combine into a Schema Graph ---
