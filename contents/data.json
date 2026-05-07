@@ -1,7 +1,4 @@
 {
-  "_id": {
-    "$oid": "69fada5e3f2d6006deba37cb"
-  },
   "post": {
     "metadata": {
       "slug": "grow-business-fifa-world-cup-2026",
@@ -71,6 +68,10 @@
         "type": "heading",
         "level": 2,
         "content": "Best Business Ideas During FIFA World Cup"
+      },
+      {
+        "type":"instagram",
+        "videoId": "DYCsxrlh8Kk"
       },
       {
         "type": "paragraph",
