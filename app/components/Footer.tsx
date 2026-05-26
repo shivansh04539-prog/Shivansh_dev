@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
   FaGithub,
-  FaTwitter,
   FaLinkedin,
   FaArrowRight,
   FaInstagram,
+  FaYoutube,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -51,14 +51,7 @@ export default function Footer() {
             >
               <FaInstagram className="h-6 w-6" />
             </a>
-            <a
-              href="https://x.com/Adarshs97102593"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-secondary hover:text-primary transition-colors transform hover:scale-110"
-            >
-              <FaTwitter className="h-6 w-6" />
-            </a>
+           
             <a
               href="https://www.linkedin.com/in/shivansh-singh-bb1b0b328/"
               target="_blank"
@@ -66,6 +59,14 @@ export default function Footer() {
               className="text-secondary hover:text-primary transition-colors transform hover:scale-110"
             >
               <FaLinkedin className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.youtube.com/@Shivanshdevloper"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-primary transition-colors transform hover:scale-110"
+            >
+              <FaYoutube className="h-6 w-6" />
             </a>
           </div>
         </div>
