@@ -1,43 +1,81 @@
-"use client";
+import type { Metadata } from "next";
+import DownloadClient from "@/app/components/(download)/DownloadClient";
 
-export default function DownloadPage() {
-  // Function to handle download ONLY when clicked
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "Shivansh_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+export const metadata: Metadata = {
+  metadataBase: new URL("https://webcontractor.in"),
+  title: "Shivansh Singh Resume | Full Stack Next.js & React Developer",
+  description: "Download the official resume of Shivansh Singh, a freelance Full Stack Web Developer and SEO expert serving Saharanpur, Haridwar, and Dehradun. Specializing in React, Next.js, and MERN stack applications.",
+  keywords: [
+    "Shivansh Singh Resume",
+    "Web Developer Resume India",
+    "Next.js Developer CV",
+    "React Developer Saharanpur",
+    "Freelance Web Developer Haridwar",
+    "MERN Stack Developer Dehradun",
+    "Hire Full Stack Developer",
+  ],
+  alternates: {
+    canonical: "https://webcontractor.in/resume",
+  },
+  openGraph: {
+    title: "Shivansh Singh - Professional Web Developer Resume",
+    description: "View and download my professional CV detailing expertise in Next.js, custom e-commerce architecture, and localized search engine optimization.",
+    url: "https://webcontractor.in/resume",
+    siteName: "WebContractor",
+    type: "profile",
+    images: [
+      {
+        url: "/og-image.jpg", // Replace with your actual OG image path
+        width: 1200,
+        height: 630,
+        alt: "Shivansh Singh Resume",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shivansh Singh | Web Developer Resume",
+    description: "Download my professional CV for custom website development and SEO services.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
-    // Optional: Open in new tab too
-    window.open("/resume.pdf", "_blank");
+// JSON-LD Schema to help engines understand this is an official professional document
+const resumeSchema = {
+  "@context": "https://schema.org",
+  "@type": "DigitalDocument",
+  "name": "Shivansh Singh Resume",
+  "description": "Professional CV of Shivansh Singh, Full Stack Web Developer specializing in Next.js, React, and SEO engineering.",
+  "url": "https://webcontractor.in/resume",
+  "fileFormat": "application/pdf",
+  "author": {
+    "@type": "Person",
+    "name": "Shivansh Singh",
+    "jobTitle": "Full Stack Web Developer",
+    "telephone": "+917618550475",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Saharanpur",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "India"
+    }
+  }
+};
 
-    // console.log(
-    //   `[${new Date().toLocaleTimeString()}] ✅ User triggered resume download`,
-    // );
-  };
-
+export default function ResumePage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  text-white text-center p-4">
-      <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 mb-4">
-        Download Resume
-      </h1>
-      <p className="text-gray-400 mb-8 max-w-md">
-        Click the button below to save my resume. This helps prevent unnecessary
-        server requests.
-      </p>
-
-      <button
-        onClick={handleDownload}
-        className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-cyan-500/20"
-      >
-        Download PDF
-      </button>
-
-      <div className="mt-6 text-sm text-gray-500">
-        File size: ~200KB • Format: PDF
-      </div>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(resumeSchema),
+        }}
+      />
+      <DownloadClient />
+    </>
   );
 }

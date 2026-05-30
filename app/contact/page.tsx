@@ -1,257 +1,113 @@
-"use client";
+import type { Metadata } from "next";
+import ContactClient from "@/app/components/(contact)/ContactForm";
 
-import { useState } from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt ,FaInstagram } from "react-icons/fa";
-import { motion } from "framer-motion";
-import {
-  fadeInUp,
-  fadeIn,
-  slideInLeft,
-  slideInRight,
-} from "@/utils/animations";
+export const metadata: Metadata = {
+  metadataBase: new URL("https://webcontractor.in"),
+  title: "Contact Shivansh Singh | Best Web Developer in Saharanpur, Haridwar & Dehradun",
+  description: "Get in touch with Shivansh Singh, a Full Stack Web Developer specializing in Next.js, React, MERN Stack, high-converting e-commerce sites, and local SEO services across Saharanpur, Haridwar, Dehradun, Roorkee, and Yamunanagar.",
+  keywords: [
+    "Contact Web Developer Saharanpur",
+    "Web Developer in Saharanpur",
+    "Website Developer in Saharanpur",
+    "Best Web Developer in Saharanpur",
+    "Freelance Web Developer in Saharanpur",
+    "Website Designer in Saharanpur",
+    "Web Developer in Haridwar",
+    "Website Developer in Haridwar",
+    "Web Developer in Dehradun",
+    "Website Developer in Dehradun",
+    "Next.js Developer Saharanpur",
+    "React Developer Uttarakhand",
+    "MERN Stack Developer Roorkee",
+    "Ecommerce Website Developer Yamunanagar",
+    "Business Website Developer",
+    "SEO Expert in Saharanpur",
+    "Hire Web Developer India",
+    "Contact Website Developer",
+    "Custom Website Development",
+  ],
+  alternates: {
+    canonical: "https://webcontractor.in/contact",
+  },
+  openGraph: {
+    title: "Contact Shivansh Singh | Full Stack Web Developer",
+    description: "Ready to grow your local business? Contact me for fast Next.js sites, custom e-commerce stores, coaching institute management portals, or advanced SEO services.",
+    url: "https://webcontractor.in/contact",
+    siteName: "WebContractor",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Shivansh Singh - Web Contractor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Shivansh Singh | Freelance Web Developer",
+    description: "Get in touch for custom high-performance web development and strategic local SEO services.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+const unifiedSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Shivansh Singh",
+    "url": "https://webcontractor.in/contact",
+    "description": "Get in touch with Shivansh Singh for custom business web applications, Next.js architecture, and SEO engineering services."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Web Contractor",
+    "url": "https://webcontractor.in",
+    "founder": {
+      "@type": "Person",
+      "name": "Shivansh Singh"
+    },
+    "telephone": "+917618550475",
+    "email": "shivanshsingh4539@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Saharanpur",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "India"
+    },
+    "areaServed": [
+      "Saharanpur",
+      "Haridwar",
+      "Dehradun",
+      "Roorkee",
+      "Yamunanagar"
+    ],
+    "serviceType": [
+      "Website Development",
+      "Ecommerce Development",
+      "SEO Services",
+      "Next.js Development",
+      "React Development"
+    ]
+  }
+];
 
-type FormStatus = "idle" | "loading" | "success" | "error";
-
-export default function Contact() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState<FormStatus>("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) throw new Error("Failed to send message");
-
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
+export default function ContactPage() {
   return (
-    <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1 className="text-4xl font-bold mb-8 text-center" {...fadeInUp}>
-        Contact Me
-      </motion.h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Contact Information */}
-        <motion.div className="space-y-8" {...slideInLeft}>
-          <motion.div {...fadeInUp}>
-            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <p className="text-secondary">
-              I&apos;m always open to discussing new projects, creative ideas,
-              or opportunities to be part of your visions.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="space-y-4"
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.div
-              className="flex items-center gap-4"
-              variants={fadeInUp}
-              whileHover={{ x: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <FaEnvelope className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <a
-                  href="mailto:your.email@example.com"
-                  className="text-secondary hover:text-primary"
-                >
-                  shivanshsingh4539@gmail.com
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-4"
-              variants={fadeInUp}
-              whileHover={{ x: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <FaPhone className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <a
-                  href="tel:+1234567890"
-                  className="text-secondary hover:text-primary"
-                >
-                  +91 7618550475
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-4"
-              variants={fadeInUp}
-              whileHover={{ x: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <FaMapMarkerAlt className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Location</h3>
-                <p className="text-secondary">Saharanpur, India</p>
-              </div>
-            </motion.div>
-
-            <motion.a
-  href="https://www.instagram.com/shivanshdeveloper"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.05, y: -2 }}
-  whileTap={{ scale: 0.95 }}
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.3 }}
-  className="
-    mt-10 inline-flex items-center gap-3
-    px-6 py-3 md:px-7 md:py-3.5
-
-    bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]
-    text-white text-sm md:text-base font-semibold
-
-    rounded-xl
-    shadow-md shadow-pink-500/20
-    hover:shadow-pink-500/40
-
-    transition-all duration-300
-  "
->
-  <FaInstagram className="text-2xl md:text-3xl" />
-  <span>See my work on Instagram</span>
-</motion.a>
-
-
-          </motion.div>
-        </motion.div>
-
-        {/* Contact Form */}
-        <motion.div
-          className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
-          {...slideInRight}
-        >
-          <motion.form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.div variants={fadeInUp}>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </motion.div>
-
-            <motion.button
-              type="submit"
-              disabled={status === "loading"}
-              className="w-full btn btn-primary"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {status === "loading" ? "Sending..." : "Send Message"}
-            </motion.button>
-
-            {status === "success" && (
-              <motion.p
-                className="text-green-500 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                Message sent successfully!
-              </motion.p>
-            )}
-
-            {status === "error" && (
-              <motion.p
-                className="text-red-500 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                Failed to send message. Please try again.
-              </motion.p>
-            )}
-          </motion.form>
-        </motion.div>
-      </div>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(unifiedSchema),
+        }}
+      />
+      <ContactClient />
+    </>
   );
 }

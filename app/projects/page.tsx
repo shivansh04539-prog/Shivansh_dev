@@ -1,139 +1,83 @@
-"use client";
-
+import type { Metadata } from "next";
+import ProjectsClient from "@/app/components/(project)/ProjectsClient";
 import { projects } from "@/contents/projects";
-import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, cardHoverSmall } from "@/utils/animations";
 
-export default function Projects() {
+// Hard-Hitting Local SEO Meta Injection
+export const metadata: Metadata = {
+  metadataBase: new URL("https://webcontractor.in"),
+  title: "Full Stack Web Development Portfolio | Shivansh Singh",
+  description: "Explore verified client projects, production e-commerce platforms, AI-integrated software, and custom educational systems built for businesses across Saharanpur, Dehradun, and Haridwar by Shivansh Singh.",
+  keywords: [
+    "Web Developer Portfolio Saharanpur",
+    "Next.js Projects Portfolio",
+    "React Developer Case Studies",
+    "MERN Stack Applications India",
+    "E-commerce Web Developer Portfolio",
+    "AI Application Developer Dehradun",
+    "Custom Software Portfolio Haridwar",
+  ],
+  alternates: {
+    canonical: "https://webcontractor.in/projects",
+  },
+  openGraph: {
+    title: "Shivansh Singh - Engineering & Development Portfolio",
+    description: "Browse high-performance case studies spanning AI chat systems, real estate price tools, and operational dashboards.",
+    url: "https://webcontractor.in/projects",
+    siteName: "WebContractor",
+    type: "website",
+    images: [
+      {
+        url: "/projects/main.png",
+        width: 1200,
+        height: 630,
+        alt: "Shivansh Singh Project Portfolio Overview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shivansh Singh | Full Stack Production Portfolio",
+    description: "Review live interactive case studies built with React, Next.js, and Node.js.",
+    images: ["/projects/main.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function ProjectsPage() {
+  // Dynamically compile an ItemList schema so bots map your projects array explicitly
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Shivansh Singh - Development Project Portfolio",
+    "description": "Production-grade custom web applications built for business clients.",
+    "url": "https://webcontractor.in/projects",
+    "numberOfItems": projects.length,
+    "itemListElement": projects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "CreativeWork",
+        "name": project.title,
+        "description": project.description,
+        "programmingLanguage": project.technologies,
+        "codeRepository": project.githubLink || undefined,
+        "url": project.demoLink
+      }
+    }))
+  };
+
   return (
-    <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1
-        className="text-4xl font-bold mb-4 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        My Projects
-      </motion.h1>
-
-      <motion.p
-        className="text-lg text-secondary mb-24 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Here are some of my recent projects. Click on the links to view the code
-        or live demo.
-      </motion.p>
-
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-        variants={staggerContainer}
-        initial="initial"
-        animate="animate"
-      >
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="relative bg-white dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
-            variants={fadeInUp}
-            {...cardHoverSmall}
-          >
-            {/* FLAGSHIP BADGE */}
-            {project.flagship && (
-              <div className="absolute top-3 left-3 z-10">
-                <span className="px-3 py-2 text-xs font-semibold rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg shadow-pink-500/30 animate-pulse">
-                  🚀 Flagship
-                </span>
-              </div>
-            )}
-
-            <motion.div
-              className="aspect-video bg-gray-200 dark:bg-gray-800"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full"
-                width={500}
-                height={500}
-              />
-            </motion.div>
-
-            <div className="p-6">
-              <motion.h3
-                className="text-xl font-semibold mb-2"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {project.title}
-              </motion.h3>
-
-              <motion.p
-                className="text-secondary mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                {project.description}
-              </motion.p>
-
-              <motion.div
-                className="flex flex-wrap gap-2 mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                {project.technologies.map((tech, techIndex) => (
-                  <motion.span
-                    key={techIndex}
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </motion.div>
-
-              <motion.div
-                className="flex gap-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <motion.a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaGithub className="h-5 w-5" />
-                  <span>Code</span>
-                </motion.a>
-
-                <motion.a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaExternalLinkAlt className="h-5 w-5" />
-                  <span>Live Demo</span>
-                </motion.a>
-              </motion.div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema),
+        }}
+      />
+      <ProjectsClient />
+    </>
   );
 }
