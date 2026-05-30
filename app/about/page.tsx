@@ -100,7 +100,7 @@ const faqSchema = {
 const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Web Contractor",
+    "name": "Shivansh - Web Developer",
   url: "https://webcontractor.in",
   founder: "Shivansh Singh",
   areaServed: [

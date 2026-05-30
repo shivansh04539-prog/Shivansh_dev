@@ -67,7 +67,7 @@ const unifiedSchema = [
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Web Contractor",
+    "name": "Shivansh - Web Developer",
     "url": "https://webcontractor.in",
     "founder": {
       "@type": "Person",

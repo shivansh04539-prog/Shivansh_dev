@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "Saharanpur website maker",
     "web developer in Saharanpur",
     "Best Web Developer in Saharanpur",
+    "best website designing company",
     "web developer",
     "वेबसाइट",
     "web development",
@@ -136,7 +137,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "Shivansh Singh Web Development Services",
+             "name": "Shivansh - Web Developer",
               image: "https://webcontractor.in/og-image.jpg",
               url: "https://webcontractor.in",
               telephone: "+91 7618550475",
