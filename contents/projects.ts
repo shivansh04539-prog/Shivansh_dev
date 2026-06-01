@@ -48,7 +48,7 @@ export const projects: Project[] = [
       "Built a full-stack dashboard system to manage students, employees, and daily operations for a 20+ year-old coaching institute. Improved operational efficiency and streamlined communication with automated tools.",
     technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
     githubLink: "https://github.com/ShivanshDeveloper1/rapti.git",
-    demoLink: "https://rapticomputers.com",
+    demoLink: "https://rapticomputer.com",
     image: "/projects/task-manager.png",
   },
 
