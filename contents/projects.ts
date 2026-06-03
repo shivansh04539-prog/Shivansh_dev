@@ -58,7 +58,7 @@ export const projects: Project[] = [
       "Built a content-driven website optimized for SEO that attracts consistent organic traffic and increases brand visibility in the local market.",
     technologies: ["Gatsby", "GraphQL", "Contentful"],
     githubLink: "https://github.com",
-    demoLink: "https://saharanpurprice.in/Blogs",
+    demoLink: "https://webcontractor.in/blogs",
     image: "/projects/blog-website.jpeg",
   },
 
