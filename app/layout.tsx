@@ -19,8 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Shivansh Singh | Saharanpur Web Developer | Next.js & MERN Stack Expert",
+    title: "%s| Web Developer in Saharanpur ",
   description:
     "I'm Shivansh Singh, a professional web developer from Saharanpur specializing in Next.js, React, Tailwind, SEO, and modern full-stack web development.",
   keywords: [
@@ -63,9 +62,8 @@ export const metadata: Metadata = {
 
   authors: [{ name: "Shivansh Singh" }],
   openGraph: {
-    title: "Shivansh Singh | Saharanpur Web Developer",
-    description:
-      "Portfolio of Shivansh Singh — Web Developer from Saharanpur, building high-performance websites using Next.js and React.",
+  title: "Web Developer in Saharanpur | Custom Websites",
+   description: "Building high-performance websites using Next.js and React for businesses.",
     url: "https://webcontractor.in",
     siteName: "Shivansh Portfolio",
     images: [

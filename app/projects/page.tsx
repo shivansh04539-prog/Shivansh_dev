@@ -5,7 +5,7 @@ import { projects } from "@/contents/projects";
 // Hard-Hitting Local SEO Meta Injection
 export const metadata: Metadata = {
   metadataBase: new URL("https://webcontractor.in"),
-  title: "Full Stack Web Development Portfolio | Shivansh Singh",
+  title: "Full Stack Web Development Projects  | Web Development Awesome Projects",
   description: "Explore verified client projects, production e-commerce platforms, AI-integrated software, and custom educational systems built for businesses across Saharanpur, Dehradun, and Haridwar by Shivansh Singh.",
   keywords: [
     "Web Developer Portfolio Saharanpur",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "https://webcontractor.in/projects",
   },
   openGraph: {
-    title: "Shivansh Singh - Engineering & Development Portfolio",
+    title: "Full Stack Web Developer Portfolio | Shivansh Singh",
     description: "Browse high-performance case studies spanning AI chat systems, real estate price tools, and operational dashboards.",
     url: "https://webcontractor.in/projects",
     siteName: "WebContractor",

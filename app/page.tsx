@@ -12,8 +12,8 @@ import BlogsWrapper from "./components/(Blog)/(homepage)/BlogsWrapper";
 
 // Hyper-Targeted Homepage Metadata
 export const metadata: Metadata = {
-  title: "Shivansh Singh | Saharanpur Web Developer | Next.js & MERN Stack Expert",
-  description: "Professional freelance web developer in Saharanpur, Dehradun, and Noida. Specializing in high-performance Next.js web applications, MERN stack development, and advanced SEO strategies.",
+title: "Best Web Developer in Saharanpur | Next.js & MERN Stack", // This overrides the layout default
+  description: "Professional freelance web developer in Saharanpur. Specializing in high-performance Next.js web applications, e-commerce, and advanced SEO strategies.",
   keywords: [
     "Saharanpur web developer",
     "web developer in Saharanpur",
