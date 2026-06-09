@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: {
-    default: "Shivansh Singh | Premium Next.js & Full-Stack Web Development",
+    default: "Shivansh Singh |  Next.js & Full-Stack Developer",
     template: "%s | Shivansh Singh",
   },
   description:
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 
   authors: [{ name: "Shivansh Singh" }],
   openGraph: {
-  title: "Web Developer in Saharanpur | Custom Websites",
+  title: "Web Developer | Custom Websites",
    description: "Building high-performance websites using Next.js and React for businesses.",
     url: "https://webcontractor.in",
     siteName: "Shivansh Portfolio",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         url: "https://webcontractor.in/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Shivansh Singh - Saharanpur Web Developer",
+        alt: "Shivansh Singh -  Web Developer",
       },
     ],
     locale: "en_IN",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shivansh Singh | Saharanpur Web Developer",
+    title: "Shivansh Singh |  Web Developer",
     description:
       "Building modern websites with React, Next.js & Tailwind — based in Saharanpur, India.",
     images: ["https://webcontractor.in/og-image.jpg"],
@@ -92,6 +92,26 @@ export const metadata: Metadata = {
   verification: {
     google: "Y36bdXR4XbcJThPjEki14g9oZ-eJJyK67frahLuek0c",
   },
+
+
+  robots:{
+    index:true,
+    follow:true,
+    nocache:false,
+      googleBot: {
+    index: true,
+    follow: true,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+  }
+
+
+
+
+
+
 };
 
 

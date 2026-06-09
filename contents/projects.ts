@@ -33,15 +33,7 @@ export const projects: Project[] = [
   demoLink: "https://saharanpurprice.in",
   image: "/projects/main.png",
 },
-  // {
-  //   title: "High-Converting Agency Website",
-  //   description:
-  //     "Designed and developed a conversion-focused agency website that clearly communicates services, builds trust, and generates qualified business inquiries.",
-  //   technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-  //   githubLink: "https://github.com/ShivanshDeveloper1/agency",
-  //   demoLink: "https://www.codemindswebservices.com/",
-  //   image: "/projects/portfolio-website.jpg",
-  // },
+  
   {
     title: "Complete Digital Management System for Coaching Institute",
     description:
@@ -63,7 +55,7 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Modern Website for 25+ Year Coaching Institute",
+    title: "Modern Website for 25+ Year Old Coaching Institute",
     description:
       "Redesigned and modernized the institute’s website with dynamic result sections, blogs, and improved user experience, helping increase student trust and inquiries.",
     technologies: ["React", "Node.js", "framer motion"],

@@ -2,7 +2,7 @@
 import { MetadataRoute } from "next";
 import { locations } from "@/data/locations"; // Import your city data
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://webcontractor.in"; // change to your real domain
 
 
