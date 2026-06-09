@@ -24,7 +24,7 @@ export const locations = [
       "Who can create ecommerce website in Dehradun"
     ],
     },
-    canonicalUrl: "https://yourdomain.com/web-developer-in-dehradun",
+    canonicalUrl: "https://webcontractor.in/locations/web-developer-in-dehradun",
 
     faqKeywords: [
       "How much does a website cost in Dehradun?",
@@ -87,7 +87,7 @@ export const locations = [
     ]
   },
 
-  canonicalUrl: "https://yourdomain.com/web-developer-in-haridwar",
+  canonicalUrl: "https://webcontractor.in/locations/web-developer-in-haridwar",
 
   faqKeywords: [
     "How much does a website cost in Haridwar?",
@@ -174,7 +174,7 @@ export const locations = [
     ]
   },
 
-  canonicalUrl: "https://yourdomain.com/web-developer-in-yamunanagar",
+  canonicalUrl: "https://webcontractor.in/locations/web-developer-in-yamunanagar",
 
   faqKeywords: [
     "How much does a website cost in Yamuna Nagar?",
@@ -262,7 +262,7 @@ export const locations = [
     ]
   },
 
-  canonicalUrl: "https://yourdomain.com/web-developer-in-roorkee",
+  canonicalUrl: "https://webcontractor.in/locations/web-developer-in-roorkee",
 
   faqKeywords: [
     "How much does a website cost in Roorkee?",
@@ -353,7 +353,7 @@ export const locations = [
     ]
   },
 
-  canonicalUrl: "https://webcontractor.in/web-developer-in-saharanpur",
+  canonicalUrl: "https://webcontractor.in/locations/web-developer-in-saharanpur",
   instagramVideoId: "DXCBwOgB8qr",
 
   faqKeywords: [
