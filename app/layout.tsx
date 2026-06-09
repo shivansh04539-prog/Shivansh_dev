@@ -19,7 +19,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "%s| Web Developer in Saharanpur ",
+    title: {
+    default: "Shivansh Singh | Premium Next.js & Full-Stack Web Development",
+    template: "%s | Shivansh Singh",
+  },
   description:
     "I'm Shivansh Singh, a professional web developer from Saharanpur specializing in Next.js, React, Tailwind, SEO, and modern full-stack web development.",
   keywords: [
