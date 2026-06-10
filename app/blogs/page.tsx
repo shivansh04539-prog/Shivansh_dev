@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import { Blog } from "@/models/Blog"; // Import your DB logic
 import Featured from "../components/(Blog)/Featured";
@@ -12,16 +12,40 @@ export const metadata = {
     "Explore web development tutorials, Next.js tips, SEO strategies, and real-world coding insights by Shivansh Singh. Learn modern development and build better websites.",
 };
 
-// export const revalidate = 3600;
+export const revalidate = 2592000; // 30 days
 
-export default async function BlogPage() {
-  const blogs = await Blog.list();
+export default  function BlogPage() {
+
 
   return (
     <>
       <HomePage />
       {/* 2. Pass the data to the client component */}
-      <Featured initialBlogs={blogs} />
+      <Suspense fallback={<BlogsSkeleton />}>
+
+ 
+    <FeaturedWrapper />
+      </Suspense>
     </>
+  );
+}
+
+
+async function FeaturedWrapper (){
+  const blogs = await Blog.list()
+  return <Featured initialBlogs={blogs}  />
+}
+
+
+function BlogsSkeleton() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div
+          key={i}
+          className="h-80 rounded-2xl animate-pulse bg-gray-200 dark:bg-gray-800"
+        />
+      ))}
+    </div>
   );
 }

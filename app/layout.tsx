@@ -93,6 +93,8 @@ export const metadata: Metadata = {
     google: "Y36bdXR4XbcJThPjEki14g9oZ-eJJyK67frahLuek0c",
   },
 
+    metadataBase: new URL("https://webcontractor.in"),
+
 
   robots:{
     index:true,

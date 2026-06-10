@@ -1,28 +1,19 @@
-// app/api/posts/route.js (Corrected) ✅
-
+// app/api/posts/route.js
 import { NextResponse } from "next/server";
-
-import dbConnect from "@/lib/db";
-import Blog from "@/models/Blog"; // Import your Mongoose model
+import { Blog } from "@/models/Blog"; // Note: you don't even need dbConnect here anymore because Blog.save() handles it!
 
 export async function POST(request) {
   try {
-    // 👉 Use request.json() to parse the incoming JSON body
     const data = await request.json();
 
-    await dbConnect();
-
-    // Now 'data' is the JavaScript object { post: { metadata: ..., body: ... } }
-    // You can directly use it to create a new document
-    const newBlogPost = new Blog(data);
-    await newBlogPost.save();
+    // 👉 Use your custom static method directly!
+    const result = await Blog.save(data);
 
     return NextResponse.json(
-      { message: "Blog post created successfully!", post: newBlogPost },
+      { message: "Blog post created successfully!", success: result.success },
       { status: 201 }
     );
   } catch (error) {
-    // console.error("Error creating blog post:", error);
     return NextResponse.json(
       { message: "Failed to create blog post.", error: error.message },
       { status: 500 }
