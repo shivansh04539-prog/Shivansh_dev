@@ -353,10 +353,10 @@ export default function BlogClientWrapper({
                   Want to build a new website with awesome features, a powerful backend, and SEO-friendly design.
                 </p>
                 <a
-                  href="/"
+                  href="/contact"
                   className="block w-full text-center py-3 rounded-lg bg-cyan-600 dark:bg-cyan-500 hover:bg-cyan-700 dark:hover:bg-cyan-400 text-white dark:text-black font-bold transition shadow-md"
                 >
-                  Check Prices Now
+                 Contact Now
                 </a>
               </div>
             </div>
