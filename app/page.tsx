@@ -36,7 +36,7 @@ title: "Best Web Developer in Saharanpur | Next.js & MERN Stack", // This overri
         url: "https://webcontractor.in/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Shivansh Singh - Saharanpur Web Developer Portfolio",
+        alt: "Shivansh Singh - Web Developer ",
       },
     ],
   },

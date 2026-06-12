@@ -155,32 +155,52 @@ export default function BlogClientWrapper({
         </ul>
       );
     }
-    if (block.type === "instagram") {
-    return (
-      <div key={index} className="my-8 flex justify-center w-full">
-        <div className="w-full max-w-[540px]">
-          <blockquote
-            className="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink={`https://www.instagram.com/p/${block.videoId}/`}
-            data-instgrm-version="14"
-            style={{
-              background: "#FFF",
-              border: "0",
-              borderRadius: "12px",
-              boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
-              margin: "1px",
-              width: "100%",
-            }}
-          >
-            <a href={`https://www.instagram.com/p/${block.videoId}/`} target="_blank" rel="noopener noreferrer">
-              View Post on Instagram
-            </a>
-          </blockquote>
+
+    // --- INSTAGRAM BLOCK ---
+    if (block.type === "instagram" || block.type === "Instagram") {
+      return (
+        <div key={index} className="my-8 flex justify-center w-full">
+          <div className="w-full max-w-[540px]">
+            <blockquote
+              className="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink={`https://www.instagram.com/p/${block.videoId}/`}
+              data-instgrm-version="14"
+              style={{
+                background: "#FFF",
+                border: "0",
+                borderRadius: "12px",
+                boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
+                margin: "1px",
+                width: "100%",
+              }}
+            >
+              <a href={`https://www.instagram.com/p/${block.videoId}/`} target="_blank" rel="noopener noreferrer">
+                View Post on Instagram
+              </a>
+            </blockquote>
+          </div>
         </div>
-      </div>
-    );
-  }
+      );
+    }
+
+    // --- NEW: YOUTUBE BLOCK ---
+    if (block.type === "youtube" || block.type === "Youtube") {
+      return (
+        <div key={index} className="my-8 flex justify-center w-full">
+          <div className="relative w-full max-w-3xl aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 bg-black">
+            <iframe
+              src={`https://www.youtube.com/embed/${block.videoId}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      );
+    }
 
     // --- HTML / EMBED BLOCK ---
     if (block.type === "html" || block.type === "embed") {
