@@ -12,7 +12,7 @@ export const metadata = {
     "Explore web development tutorials, Next.js tips, SEO strategies, and real-world coding insights by Shivansh Singh. Learn modern development and build better websites.",
 };
 
-// export const revalidate = 2592000; // 30 days
+// export const revalidate = 2592000; // 30 days  make it open after some time
 
 export default  function BlogPage() {
 
